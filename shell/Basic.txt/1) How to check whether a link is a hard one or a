@@ -1,0 +1,119 @@
+1) How to check whether a link is a hard one or a soft link?
+	-h file      //true if the file is a symbolic link
+	-L file      //true if the file is a symbolic link
+
+readlink FILE; echo $?       // This returns 1 if it's a hard link and 0 if it's a symbolic link.
+
+
+2) what is shebang line
+		shebang line nothing but which shell we are using to run our scripts (#!/bin/bash)
+
+3)  Name the alternative command for echo.
+		tput
+
+4) Explain the way you can connect to a database server.
+	 isql –S serverName –U username –P password 
+
+5) What is the importance of $#?
+	$# usually holds the number of arguments, although it may be different for functions. To put it simply, it was used to store the number of command-line arguments passed to a shell script.
+
+6) Write the command that is used to execute a shell file.
+	chmod +x script-name-here.sh 
+	./script-name-here.sh 
+
+7) Name the command that can be used to find out the number of arguments passed to the script?
+	echo $#
+
+8) What is the use of the "$?" command?
+	By using the command "$?", you can find out the status of the last command executed.
+
+9) What is the best way to run a script in the background?
+	For a script to run in the background, simply add "&" at the end of the command.
+	Example:
+
+		script.sh &
+
+10) What do you mean by crontab?
+	Crontab stands for "cron table," meaning that it makes use of the cron scheduler to perform tasks.
+
+11) Write the difference between $* and $@
+		Unlike $@, where each quoted argument is treated as a separate argument, $* treats each positional parameter as a single argument.
+
+12) Write down the Syntax for all the loops in Shell Scripting. 
+		
+		In shell scripting, you can use three looping statements as given below:
+
+		while statement
+		for statement
+		until statement
+
+	example: 
+
+		For Loop: Loops that operate on lists of items are known as loops. Each item in the list receives the same set of commands.
+
+Syntax: 
+	for var in word1 word2 ... wordN 
+	do   
+   	     Statement to be executed  
+	done
+
+
+example 
+	 for a in 1 2 3 4 5 6 7 8 9 10
+	 do 
+	 	if [$a == 3]
+	 	then
+	 		break
+	 	fi
+	 	echo 'iteration no $a'
+	 done
+
+
+
+13) How will you debug a shell script?
+		With set, you can turn on or off debugging options in the shell: 
+
+			Set -x: This displays commands and their arguments as they are being executed.
+			Set -v: It displays shell input lines in real-time as they are read.
+
+14) What is the importance of sed command and awk command?
+
+	  The SED command performs a variety of operations on files, such as searching, finding and replacing, inserting and deleting.
+
+	  However, substitution or find and replace are the most commonly used features of SED.
+		syntx : sed 's/<replacename>/<instername>/[options]' <filename>
+
+awk syntx
+ awk '{print $1}' <filename>
+
+ 15) Name different commands that are available to check the disk usage.
+	The following commands are available to check disk space usage:
+
+	df – It is used to find out how much space is left on a disk.
+	du – With this command, you can find out how much disk space the specified files and each subdirectory take up.
+	dfspace – Using this command, you can check the amount of free disk space in MB.
+
+
+16) Write the difference between $$ and $!?
+	You can use $$ to get the process id of the current process. However, $! displays the process id for a background process that recently went away.
+
+17) How can we create a function in shell script?
+	In other programming languages, shell functions are much like subroutines, procedures, and functions. The syntax for declaring a function is as follows:
+
+	function_name () 
+	{ 
+		list of commands
+	} 
+
+
+18) In a file I have ip addresses , I want list unique ip addresses with number of times its present in file?
+
+grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" logfile | sort | uniq -c | sort -nr
+
+
+
+
+
+
+
+
